@@ -7,7 +7,7 @@ public:
         const int MAX = 256;
     	int len = 0;
         
-        int tag = -1;
+        int tag = 0;
         
         int mp[MAX];
         for(int i = 0; i < MAX; i++)
@@ -19,7 +19,7 @@ public:
             return 0;
         
         for (int i = 0; i < size; i++) {
-			if(mp[str[i]] >= tag) {
+			if(mp[str[i]] > -1) {
 				len = max(i-tag, len);
 				tag = mp[str[i]] + 1;
 				mp[str[i]] = i;
